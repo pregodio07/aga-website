@@ -1,14 +1,768 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>A-GA LLC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A-GA LLC | IT Asset Recovery</title>
+
+    <meta
+        name="description"
+        content="A-GA LLC helps Minnesota organizations recover value from surplus computers, mobile devices, and retired business technology."
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #17233b;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e3e8ef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+        }
+
+        .logo-mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #153d73;
+            color: #ffffff;
+            display: grid;
+            place-items: center;
+            font-size: 1.15rem;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        nav a:hover {
+            color: #1d67b1;
+        }
+
+        .nav-button {
+            background: #153d73;
+            color: #ffffff;
+            padding: 11px 18px;
+            border-radius: 7px;
+        }
+
+        .nav-button:hover {
+            background: #0f2f59;
+            color: #ffffff;
+        }
+
+        .hero {
+            background:
+                linear-gradient(rgba(10, 37, 73, 0.91), rgba(10, 37, 73, 0.91)),
+                linear-gradient(135deg, #174477, #0b274d);
+            color: #ffffff;
+            padding: 110px 0;
+        }
+
+        .hero-content {
+            max-width: 820px;
+        }
+
+        .eyebrow {
+            color: #82c9ff;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1.05;
+            margin-bottom: 24px;
+            letter-spacing: -0.04em;
+        }
+
+        .hero p {
+            max-width: 750px;
+            font-size: 1.18rem;
+            color: #dce8f5;
+            margin-bottom: 34px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 23px;
+            border-radius: 7px;
+            font-weight: 800;
+            transition: 0.2s ease;
+        }
+
+        .button-primary {
+            background: #ffffff;
+            color: #153d73;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            background: #edf5fc;
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            color: #ffffff;
+        }
+
+        .button-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .trust-strip {
+            background: #f3f6fa;
+            border-bottom: 1px solid #dce3ec;
+        }
+
+        .trust-items {
+            min-height: 88px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+            font-weight: 800;
+            color: #43516a;
+        }
+
+        section {
+            padding: 96px 0;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            color: #1d67b1;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.12;
+            margin-bottom: 18px;
+            letter-spacing: -0.035em;
+        }
+
+        .section-heading p {
+            color: #5d6a80;
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            border: 1px solid #dfe5ec;
+            border-radius: 12px;
+            padding: 34px;
+            background: #ffffff;
+            box-shadow: 0 10px 32px rgba(27, 49, 78, 0.06);
+        }
+
+        .service-number {
+            display: inline-block;
+            color: #1d67b1;
+            font-weight: 800;
+            margin-bottom: 34px;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 13px;
+        }
+
+        .service-card p {
+            color: #617087;
+        }
+
+        .equipment-section {
+            background: #f5f7fa;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .equipment-item {
+            background: #ffffff;
+            border: 1px solid #dfe5ec;
+            border-radius: 10px;
+            padding: 25px 20px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .process-section {
+            background: #102d53;
+            color: #ffffff;
+        }
+
+        .process-section .section-label {
+            color: #82c9ff;
+        }
+
+        .process-section .section-heading p {
+            color: #d7e2ee;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 26px;
+        }
+
+        .process-step {
+            border-top: 2px solid #4f94d4;
+            padding-top: 24px;
+        }
+
+        .process-step span {
+            display: inline-grid;
+            width: 38px;
+            height: 38px;
+            place-items: center;
+            background: #ffffff;
+            color: #153d73;
+            border-radius: 50%;
+            font-weight: 800;
+            margin-bottom: 22px;
+        }
+
+        .process-step h3 {
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: #cad8e7;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-copy p {
+            color: #5d6a80;
+            margin-bottom: 18px;
+        }
+
+        .why-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .why-item {
+            background: #f5f7fa;
+            border-left: 4px solid #1d67b1;
+            padding: 18px 20px;
+            font-weight: 700;
+        }
+
+        .notice {
+            margin-top: 28px;
+            background: #fff8df;
+            border: 1px solid #ecd990;
+            border-radius: 8px;
+            padding: 17px 19px;
+            color: #5c4d17;
+            font-size: 0.92rem;
+        }
+
+        .contact-section {
+            background: #eef3f8;
+        }
+
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+            background: #ffffff;
+            padding: 52px;
+            border-radius: 14px;
+            box-shadow: 0 16px 45px rgba(27, 49, 78, 0.09);
+        }
+
+        .contact-box p {
+            color: #5d6a80;
+            margin-bottom: 23px;
+        }
+
+        .contact-details {
+            border-left: 1px solid #dce3ec;
+            padding-left: 38px;
+        }
+
+        .contact-details div {
+            margin-bottom: 22px;
+        }
+
+        .contact-details span {
+            display: block;
+            color: #78859a;
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .contact-details strong {
+            font-size: 1.05rem;
+        }
+
+        .dark-button {
+            background: #153d73;
+            color: #ffffff;
+        }
+
+        .dark-button:hover {
+            background: #0f2f59;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #0b203c;
+            color: #ffffff;
+            padding: 38px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        footer p {
+            color: #bac8d6;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 850px) {
+            nav {
+                display: none;
+            }
+
+            .trust-items,
+            .equipment-grid,
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid,
+            .about-grid,
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-details {
+                border-left: none;
+                border-top: 1px solid #dce3ec;
+                padding-left: 0;
+                padding-top: 28px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero {
+                padding: 80px 0;
+            }
+
+            section {
+                padding: 72px 0;
+            }
+
+            .trust-items,
+            .equipment-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+                padding: 24px 0;
+            }
+
+            .service-card,
+            .contact-box {
+                padding: 27px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Welcome to A-GA LLC</h1>
 
-    <p>
-        We help businesses recover value from surplus IT equipment.
-    </p>
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="logo">
+                <span class="logo-mark">A</span>
+                <span>A-GA LLC</span>
+            </a>
+
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#equipment">Equipment</a>
+                <a href="#process">Process</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="nav-button">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                <div class="eyebrow">Minnesota IT Asset Recovery</div>
+
+                <h1>Recover value from retired technology.</h1>
+
+                <p>
+                    A-GA LLC helps businesses, schools, healthcare organizations,
+                    financial institutions, and public agencies manage surplus computers,
+                    mobile devices, and other business electronics.
+                </p>
+
+                <div class="hero-buttons">
+                    <a
+                        href="mailto:info@agallc.tech?subject=Equipment%20Review%20Request"
+                        class="button button-primary"
+                    >
+                        Request an Equipment Review
+                    </a>
+
+                    <a href="#services" class="button button-secondary">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="trust-strip">
+            <div class="container trust-items">
+                <div>Minnesota Based</div>
+                <div>Professional Handling</div>
+                <div>Flexible Lot Sizes</div>
+                <div>Responsive Communication</div>
+            </div>
+        </div>
+
+        <section id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="section-label">Our Services</div>
+
+                    <h2>A practical outlet for surplus and retired technology.</h2>
+
+                    <p>
+                        We help organizations identify equipment with remaining value,
+                        coordinate transfer, and establish clear expectations before assets
+                        change hands.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+                        <span class="service-number">01</span>
+
+                        <h3>Surplus Equipment Purchasing</h3>
+
+                        <p>
+                            We evaluate qualifying laptops, desktops, mobile devices,
+                            tablets, servers, and other business technology for potential
+                            purchase.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <span class="service-number">02</span>
+
+                        <h3>IT Asset Recovery</h3>
+
+                        <p>
+                            We help organizations recover value from technology that is
+                            no longer needed instead of allowing usable equipment to remain
+                            in storage.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <span class="service-number">03</span>
+
+                        <h3>Pickup and Logistics Coordination</h3>
+
+                        <p>
+                            We coordinate practical pickup or shipping arrangements based
+                            on equipment quantity, location, timing, and organizational
+                            requirements.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <span class="service-number">04</span>
+
+                        <h3>Data-Bearing Device Planning</h3>
+
+                        <p>
+                            Data-security expectations are discussed before transfer,
+                            including wiping, drive removal, documentation, or approved
+                            destruction arrangements when required.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="equipment-section" id="equipment">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="section-label">Equipment We Review</div>
+
+                    <h2>Business technology across multiple categories.</h2>
+
+                    <p>
+                        Send us an inventory list, spreadsheet, photographs, or a general
+                        description of the equipment available.
+                    </p>
+                </div>
+
+                <div class="equipment-grid">
+                    <div class="equipment-item">Laptops</div>
+                    <div class="equipment-item">Desktop Computers</div>
+                    <div class="equipment-item">Mobile Phones</div>
+                    <div class="equipment-item">Tablets</div>
+                    <div class="equipment-item">Servers</div>
+                    <div class="equipment-item">Networking Equipment</div>
+                    <div class="equipment-item">Monitors</div>
+                    <div class="equipment-item">Other Business Electronics</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section" id="process">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="section-label">How It Works</div>
+
+                    <h2>A clear process from inventory review to transfer.</h2>
+
+                    <p>
+                        We keep the process straightforward, documented, and appropriate
+                        for the equipment involved.
+                    </p>
+                </div>
+
+                <div class="process-grid">
+
+                    <div class="process-step">
+                        <span>1</span>
+                        <h3>Share Your Inventory</h3>
+                        <p>
+                            Send a spreadsheet, list, photographs, or a general description.
+                        </p>
+                    </div>
+
+                    <div class="process-step">
+                        <span>2</span>
+                        <h3>Receive a Review</h3>
+                        <p>
+                            We evaluate quantity, condition, specifications, age, and likely value.
+                        </p>
+                    </div>
+
+                    <div class="process-step">
+                        <span>3</span>
+                        <h3>Confirm the Terms</h3>
+                        <p>
+                            Pricing, logistics, timing, and data-handling expectations are confirmed.
+                        </p>
+                    </div>
+
+                    <div class="process-step">
+                        <span>4</span>
+                        <h3>Complete the Transfer</h3>
+                        <p>
+                            Equipment is collected or shipped according to the agreed arrangement.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container about-grid">
+
+                <div>
+                    <div class="section-label">About A-GA</div>
+
+                    <h2>Professional service built around trust and accountability.</h2>
+                </div>
+
+                <div class="about-copy">
+                    <p>
+                        A-GA LLC is a Minnesota-based company focused on purchasing
+                        surplus electronics and helping organizations recover value from
+                        retired technology.
+                    </p>
+
+                    <p>
+                        We serve organizations seeking a responsive, practical, and
+                        transparent partner for excess computers, phones, tablets,
+                        servers, and related equipment.
+                    </p>
+
+                    <div class="why-list">
+                        <div class="why-item">Clear communication from the first conversation</div>
+                        <div class="why-item">Flexible review of small and large equipment lots</div>
+                        <div class="why-item">Written confirmation of important transaction terms</div>
+                        <div class="why-item">A value-conscious approach to usable technology</div>
+                    </div>
+
+                    <div class="notice">
+                        A-GA LLC does not claim certifications it has not earned.
+                        Specialized data-destruction or recycling requirements are discussed
+                        and documented before equipment is accepted.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-box">
+
+                    <div>
+                        <div class="section-label">Start a Conversation</div>
+
+                        <h2>Have surplus or retired electronics?</h2>
+
+                        <p>
+                            Tell us what equipment you have, where it is located, the
+                            approximate quantity, and your preferred timeline.
+                        </p>
+
+                        <a
+                            href="mailto:info@agallc.tech?subject=Surplus%20Equipment%20Inquiry&body=Organization%3A%0AContact%20Name%3A%0ALocation%3A%0AEquipment%20Type%3A%0AApproximate%20Quantity%3A%0APreferred%20Timeline%3A"
+                            class="button dark-button"
+                        >
+                            Email Equipment Details
+                        </a>
+                    </div>
+
+                    <div class="contact-details">
+                        <div>
+                            <span>Email</span>
+                            <strong>info@agallc.tech</strong>
+                        </div>
+
+                        <div>
+                            <span>Location</span>
+                            <strong>Minnesota, USA</strong>
+                        </div>
+
+                        <div>
+                            <span>Service Focus</span>
+                            <strong>IT Asset Recovery and Electronics Purchasing</strong>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <span class="logo-mark">A</span>
+                <span>A-GA LLC</span>
+            </div>
+
+            <p>
+                © 2026 A-GA LLC. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
