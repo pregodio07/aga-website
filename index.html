@@ -227,7 +227,33 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 22px;
         }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+        .card {
+    background: #ffffff;
+    border: 1px solid #dfe5ec;
+    border-radius: 12px;
+    padding: 28px;
+    transition: 0.2s ease;
+}
 
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.card h3 {
+    color: #153d73;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.card p {
+    color: #5d6a80;
+    line-height: 1.6;
+}
         .service-card {
             border: 1px solid #dfe5ec;
             border-radius: 12px;
