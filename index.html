@@ -446,22 +446,25 @@
             font-size: 0.9rem;
         }
 
-        @media (max-width: 850px) {
-            nav {
-                display: none;
-            }
+       @media (max-width: 850px) {
 
-            .trust-items,
-            .equipment-grid,
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+    nav {
+        display: none;
+    }
 
-            .services-grid,
-            .about-grid,
-            .contact-box {
-                grid-template-columns: 1fr;
-            }
+    .trust-items,
+    .equipment-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid,
+    .about-grid,
+    .contact-box,
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
 
             .contact-details {
                 border-left: none;
